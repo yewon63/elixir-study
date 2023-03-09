@@ -4,10 +4,9 @@
   - 모듈 문서
     - 전체 모듈에 대한 개요 또는 일종의 요약을 제공한다. ex) `Cards`
   - 함수 문서
-    - 개별 기능의 목적을 문서화한다. `Cards.contains?`, `Cards.create_deck`
+    - 개별 기능의 목적을 문서화한다. ex) `Cards.contains?`, `Cards.create_deck`
 - `mix docs`
-  - HTML 파일 형식으로 문서가 자동생성된다.
-  - `$PATH/docs`
+  - `$PATH/doc` 경로에 HTML 파일 형식으로 문서가 자동생성된다.
 - `open $FILE_PATH`
 
 # 27
@@ -32,15 +31,15 @@
     - assertion 사용한다.
     - 일부 특이하고 특정한 사실을 테스트한다.
     - `test` 키워드
-    ₩- `assert` 키워드
+    - `assert` 키워드
   - doc test
     - `@doc` , `## Examples` 안에 작성한 예제 코드다.
 
 # 30
 - doctest
   - 구문이 완벽하지 않으면 코드를 테스트로 실행하지 않는다.
-  - 검증하고 싶은 변수나 값을 적을 땐 `>iex` 를 붙이지 않는다.
-  - `cards_test.exs` 에 있는 `doctest Cards` 이 코드가 doctest를 활성화한다.
+  - 검증하고 싶은 변수나 값을 적을 땐 맨 앞에 `>iex` 붙이지 않는다.
+  - `cards_test.exs` 에 있는 `doctest Cards` 코드가 doctest를 활성화한다.
 
 # 31
-- 엘릭서를 객체를 함수에 전달하고 결과를 다시 얻으므로 테스트코드를 작성하기에 적합하다.
+- 엘릭서는 객체를 함수에 전달하고 결과를 다시 얻으므로 테스트코드를 작성하기에 적합하다.

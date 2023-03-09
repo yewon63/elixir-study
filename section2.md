@@ -35,7 +35,7 @@
   - `color1 = ["red"]`
   - `[color1] = ["red"]`
   - `[color1, color2] = ["red", "blue"]`
-  - `[color1, color2, color3] = ["red", "blue"]`
+  - `[color1, color2, color3] = ["red", "blue"]` (Error)
 
 # 19
 - 파일시스템에 저장하기
@@ -50,7 +50,7 @@
     - 구문이 매우 이해하기 어려운 것으로 유명하다.
   - BEAM
     - 모든 Erlang 코드가 실행되는 가상머신
-    - ex) 자바의 JVM
+    - 자바의 JVM 역할
   - Code We Write -> Elixir Runtime -> Erlang Runtime -> BEAM (Compile and Execute)
   - 여기서 알아야하는 건 엘릭서가 구현하지 않는 작은 기능, 시스템에서 작동하는 일부 영역이 있다는 것이다.
     - 엘릭서로 작성한 작업을 수행하기 위해 어느 정도의 Erlang 코드를 호출해야 한다.
@@ -143,7 +143,7 @@
 # 25
 - 다른 개발자들을 위해 문서 추가하기
   - `ex_doc` 패키지
-- 첫째줄이 `defmodule Cards.Mixfile do` 이런식으로 시작하는 파일을 믹스파일, 즉 혼합파일이라고 한다.
+- 첫째줄이 `defmodule Cards.MixProject do` 이런식으로 시작하는 파일을 믹스파일, 즉 혼합파일이라고 한다.
 - 혼합파일에는 프로젝트에 대한 정보가 있다.
 - 혼합파일 맨 아래에는 `deps`라는 함수가 있다.
   - 패키지 종속성을 관리한다.
