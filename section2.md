@@ -7,23 +7,24 @@
     - (= 엘릭서에서 변수 할당에 사용된다)
   - `deck = Cards.create_deck` 이것 또한 일종의 패턴 매칭이다.
 
-        ```elixir
-        iex(37)> { hand, rest_of_deck } = Cards.deal(deck, 5)
-        {["Ace of Spades", "Two of Spades", "Three of Spades", "Four of Spades",
-        "Five of Spades"],
-        ["Ace of Clubs", "Two of Clubs", "Three of Clubs", "Four of Clubs",
-        "Five of Clubs", "Ace of Hearts", "Two of Hearts", "Three of Hearts",
-        "Four of Hearts", "Five of Hearts", "Ace of Diamonds", "Two of Diamonds",
-        "Three of Diamonds", "Four of Diamonds", "Five of Diamonds"]}
-        iex(38)> hand
-        ["Ace of Spades", "Two of Spades", "Three of Spades", "Four of Spades",
-        "Five of Spades"]
-        iex(39)> rest_of_deck
-        ["Ace of Clubs", "Two of Clubs", "Three of Clubs", "Four of Clubs",
-        "Five of Clubs", "Ace of Hearts", "Two of Hearts", "Three of Hearts",
-        "Four of Hearts", "Five of Hearts", "Ace of Diamonds", "Two of Diamonds",
-        "Three of Diamonds", "Four of Diamonds", "Five of Diamonds"]
-        ```
+      ```elixir
+      iex(37)> { hand, rest_of_deck } = Cards.deal(deck, 5)
+      {["Ace of Spades", "Two of Spades", "Three of Spades", "Four of Spades",
+      "Five of Spades"],
+      ["Ace of Clubs", "Two of Clubs", "Three of Clubs", "Four of Clubs",
+      "Five of Clubs", "Ace of Hearts", "Two of Hearts", "Three of Hearts",
+      "Four of Hearts", "Five of Hearts", "Ace of Diamonds", "Two of Diamonds",
+      "Three of Diamonds", "Four of Diamonds", "Five of Diamonds"]}
+      iex(38)> hand
+      ["Ace of Spades", "Two of Spades", "Three of Spades", "Four of Spades",
+      "Five of Spades"]
+      iex(39)> rest_of_deck
+      ["Ace of Clubs", "Two of Clubs", "Three of Clubs", "Four of Clubs",
+      "Five of Clubs", "Ace of Hearts", "Two of Hearts", "Three of Hearts",
+      "Four of Hearts", "Five of Hearts", "Ace of Diamonds", "Two of Diamonds",
+      "Three of Diamonds", "Four of Diamonds", "Five of Diamonds"]
+      ```
+
   - 등호(`=`)를 쓰면 패턴 매칭 시퀀스가 시작된다.
     - 왼쪽과 오른쪽이 같은 데이터 구조를 갖는다.
       - ex) `{ hand, rest_of_deck } = Cards.deal(deck, 5)`
@@ -65,7 +66,7 @@
     - 이 erlang 객체는 엄청난 수의 내장 메서드를 가지고 있다.
 
 # 21
-- 파일시스템에서에 저장한 현재 Deck 불러오고 싶다.
+- 파일시스템에서 저장한 현재 Deck을 불러오고 싶다.
 
     ```elixir
     iex(1)> File.read("my_deck")

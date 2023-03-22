@@ -29,10 +29,11 @@ defmodule Identicon do
     %Identicon.Image{hex: hex}
   end
 
-  def pick_color(%Identicon.Image{hex: [r, g, b | _tail]} = image) do # 사용하고싶지 않은 변수를 포함해야할 때 변수명 앞에 언더스코어(_)를 붙인다
+  def pick_color(%Identicon.Image{hex: [r, g, b | _tail]} = image) do # 이 라인에서는 Identicon.Image 구조체의 hex 키에 값이 할당되지 않는다.
+    # 사용하고싶지 않은 변수를 포함해야할 때 변수명 앞에 언더스코어(_)를 붙인다
     # 패턴 매칭 작업을 함수 내에서 인수쪽으로 옮기면 가독성이 향상된다
 
     # [r, g, b]
-    %Identicon.Image{image | color: {r, g, b}} # image.color = {r, g, b} 처럼 쓰지 않는다
+    %Identicon.Image{image | color: {r, g, b}} #  # 이 라인에서 Identicon.Image 구조체의 hex 키에 값이 할당된다. image.color = {r, g, b} 처럼 쓰지 않는다
   end
 end

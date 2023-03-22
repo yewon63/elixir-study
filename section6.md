@@ -1,4 +1,4 @@
-# 41
+# 41, 42, 43
 
 ## Struct (구조체, [Link](http://elixir-ko.github.io/getting_started/15.html))
 
@@ -30,6 +30,58 @@ iex(1)> Identicon.main("asdf")
 }
 ```
 
-# 42
+```elixir
+Identicon.main("asdf") # %Identicon.Image{image | color: {r, g, b}}
+%Identicon.Image{
+  hex: [145, 46, 200, 3, 178, 206, 73, 228, 165, 65, 6, 141, 73, 90, 181, 112],
+  color: {145, 46, 200}
+}
 
-# 43
+iex(1)> Identicon.main("asdf") # %Identicon.Image{color: {r, g, b}}
+%Identicon.Image{hex: nil, color: {145, 46, 200}}
+```
+
+## 지금까지 나온 파이프 연산자(`|`) 사용예시
+
+### 1. Map 속성 업데이트하기
+
+```elixir
+iex(4)> %{ colors | primary: "blue2" }
+%{primary: "blue2", secondary: "blue"}
+iex(5)> colors.primary
+"red"
+```
+
+### 2. 패턴 매칭 시 필요없는 레코드 버리기
+
+```elixir
+[color1, color2 | _rest] = ["red", "blue", "green", "yellow"]
+```
+
+```elixir
+%Identicon.Image{hex: [r, g, b | _tail]} = image
+```
+
+### 3. 메서드 호출 체인 형성하기
+
+```elixir
+def main(input) do
+  input
+  |> hash_input
+  |> pick_color
+end
+```
+
+## 지금까지 나온 자료구조
+
+1. 리스트(배열X 연결리스트O) `["R", "G", "B"]`
+2. 튜플(각 인덱스에 의미가 있는 배열) `{["R", "G", "B"], ["A", "B", "C"]}`
+3. 맵(같은 속성 타입은 하나만, `.`로 속성에 접근 가능) `%{primary: "red", secondary: "blue"}`
+4. 키워드 리스트(같은 속성 타입 여러개, `.`로 속성에 접근 불가능) `[primary: "red", primary: "blue"]`
+5. 구조체(맵의 확장판) `%Identicon.Image{hex: []}`
+
+    ```elixir
+    defmodule Identicon.Image do
+      defstruct hex: nil, color: nil
+    end
+    ```

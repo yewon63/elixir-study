@@ -51,7 +51,7 @@ iex(7)> colors.primary = "blue"
 ```
 
 ```elixir
-# Right 1
+# Right 1 (Map.put 함수로 기존 속성 업데이트 가능)
 iex(2)> colors = %{primary: "red", secondary: "blue"} 
 %{primary: "red", secondary: "blue"}
 iex(9)> Map.put(colors, :primary, "blue")   
@@ -59,7 +59,7 @@ iex(9)> Map.put(colors, :primary, "blue")
 ```
 
 ```elixir
-# Right 2 (기존 속성을 업데이트할 때만 사용가능)
+# Right 2 (파이프 연산자는 기존 속성을 업데이트할 때만 사용가능)
 iex(4)> %{ colors | primary: "blue2" }
 %{primary: "blue2", secondary: "blue"}
 iex(5)> colors.primary
@@ -67,7 +67,7 @@ iex(5)> colors.primary
 ```
 
 ```elixir
-# 새로운 속성 추가 X (파이프라인)
+# 파이프 연산자로 새로운 속성 추가 X
 iex(6)> %{ colors | others: "blue3" } 
 ** (KeyError) key :others not found in: %{primary: "red", secondary: "blue"}
     (stdlib 4.2) :maps.update(:others, "blue3", %{primary: "red", secondary: "blue"})
@@ -81,7 +81,7 @@ iex(6)> %{ colors | others: "blue3" }
 ```
 
 ```elixir
-# 새로운 속성 추가 O (Map.put)
+# Map.put 함수로 새로운 속성 추가 O
 iex(1)> colors = %{primary: "red", secondary: "blue"} 
 %{primary: "red", secondary: "blue"}
 iex(2)> Map.put(colors, :others, "others")
@@ -122,7 +122,7 @@ iex(5)> colors2.primary
     iex:5: (file)
 ```
 
-맵을 사용하면 한 개의 맵에 대해 하나의 속성 타입만 가질 수 있다. 키워드 리스트는 여러개의 속성 타입을 가질 수 있다.
+맵을 사용하면 한 개의 맵에 대해 같은 속성 타입은 하나만 가질 수 있다. 키워드 리스트는 같은 속성 타입을 여러개 가질 수 있다.
 
 ex) Ecto 라이브러리로 Database Query를 작성하는 경우 `where`절을 여러번 작성할 수 있다.
 
