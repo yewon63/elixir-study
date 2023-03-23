@@ -145,3 +145,6 @@ iex(1)> Identicon.main("asdf")
   ]
 }
 ```
+
+## 익명함수
+
