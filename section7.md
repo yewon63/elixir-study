@@ -54,7 +54,9 @@
 
 # 59
 
+`discuss/lib/discuss_web/components/layouts`
+
 1. templates
-2. layouts (`discuss/lib/discuss_web/components/layouts`)
+2. layouts
 
 - 최신 버전 피닉스에서는 헤더 / 바디 / 푸터 세 부분으로 구성됨

@@ -5,6 +5,10 @@
 /* This file is for your main application CSS */
 
 * {
-    color: white !important;
+    color: black !important;
     text-decoration-line: none !important;
+}
+
+.header {
+    color: white !important;
 }
